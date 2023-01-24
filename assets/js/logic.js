@@ -85,3 +85,22 @@ function displayEndScreen() {
     finalScore.textContent = score;
 }
 
+
+
+// Get the form elements
+const initials = document.getElementById("initials");
+const submitButton = document.getElementById("submit");
+
+// Add click event listener to the submit button
+submitButton.addEventListener("click", function() {
+    
+  // Check if both initials and finalScore are not empty
+    const entry = { initials: initials.value, score: score };
+
+    // Save the entry to local storage
+    localStorage.setItem('newEntry', JSON.stringify(entry));
+
+    // Redirect to highscores page
+    window.location.href = "highscores.html";
+  }
+);
