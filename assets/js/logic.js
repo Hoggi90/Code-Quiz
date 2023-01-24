@@ -5,10 +5,14 @@ const questions = document.getElementById("questions");
 const questionTitle = document.getElementById("question-title");
 const choices = document.getElementById("choices");
 const endScreen = document.getElementById("end-screen");
-
-
-
+const initials = document.getElementById("initials");
+const submitButton = document.getElementById("submit");
 let secondsLeft = 30;
+let incorrectSfx = new Audio("assets/sfx/incorrect.wav");
+let correctSfx = new Audio("assets/sfx/correct.wav");
+let arrayIndex = 0;
+let score = 0;
+let finalScore = document.getElementById("final-score");
 
 startQuiz.addEventListener("click", function() {
     displayQuestion()
@@ -24,12 +28,6 @@ startQuiz.addEventListener("click", function() {
         }
     }, 1000);
 });
-
-let incorrectSfx = new Audio("assets/sfx/incorrect.wav");
-let correctSfx = new Audio("assets/sfx/correct.wav");
-let arrayIndex = 0;
-let score = 0;
-let finalScore = document.getElementById("final-score");
 
 function displayQuestion() {
     questions.classList.remove("hide");
@@ -85,22 +83,11 @@ function displayEndScreen() {
     finalScore.textContent = score;
 }
 
-
-
-// Get the form elements
-const initials = document.getElementById("initials");
-const submitButton = document.getElementById("submit");
-
-// Add click event listener to the submit button
+// Create event for submit button to save score and initals
 submitButton.addEventListener("click", function() {
-    
-  // Check if both initials and finalScore are not empty
     const entry = { initials: initials.value, score: score };
-
-    // Save the entry to local storage
     localStorage.setItem('newEntry', JSON.stringify(entry));
-
-    // Redirect to highscores page
     window.location.href = "highscores.html";
   }
 );
+

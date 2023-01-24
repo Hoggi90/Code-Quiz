@@ -1,17 +1,18 @@
 const highscores = document.getElementById("highscores");
+const clearBtn = document.getElementById("clear");
 
-// Get the last entry from local storage
+// Get the entry from local storage
 const scoreString = localStorage.getItem('newEntry');
-
 if (scoreString) {
   const scoreEntry = JSON.parse(scoreString);
-  
-  // Create a new list item element
   const newScoreEntry = document.createElement("li");
-  
-  // Set the text content of the list item element to the initials and final score
-  newScoreEntry.textContent = `${scoreEntry.initials} - ${scoreEntry.score}`;
-  
-  // Append the list item element to the highscores element
+  newScoreEntry.textContent = `${scoreEntry.initials} - ${scoreEntry.score}`;  
   highscores.appendChild(newScoreEntry);
 }
+
+function clearData() {
+    localStorage.clear();
+    highscores.innerHTML = "";
+}
+
+clearBtn.addEventListener("click", clearData)
