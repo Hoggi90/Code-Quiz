@@ -7,7 +7,7 @@
 
 # Usage
 
-## You can access the page via this link: https://hoggi90.github.io/Password-Generator/
+## You can access the page via this link: https://hoggi90.github.io/Code-Quiz/
 
 ### Click on "Start Quiz" button to begin the quiz. You have 30 seconds to answer the questions correctly, if you answer incorrectly, 5 seconds will be deducted from the timer. Once the timer reaches 0, please enter your initals and it will be displayed on the Highscore page.
 
@@ -15,7 +15,7 @@
 
 # Screenshots
 
-![Screenshot](/assets/images/screenshot.png)
+![Screenshot](/assets/images/screenshot1.png)
 ![Screenshot](/assets/images/screenshot2.png)
 ![Screenshot](/assets/images/screenshot3.png)
 ![Screenshot](/assets/images/screenshot4.png)
